@@ -7,12 +7,9 @@ let cors = require('cors');
 
 app.use(
     cors({
-      origin: 'https://p-rosy-six.vercel.app', // Replace with your frontend's URL
-      methods: 'GET,POST,PUT,DELETE,OPTIONS',
-      allowedHeaders: 'Content-Type,Authorization',
+        origin: '*',
     })
-  );
-  app.options('*', cors());
+);
 app.use(express.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
