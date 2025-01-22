@@ -4,12 +4,13 @@ let bodyParser = require('body-parser');
 let path = require('path');
 let cors = require('cors');
 
-
 app.use(
     cors({
-        origin: '*',
+      origin: '*', // Allow all origins
+      methods: ['GET', 'POST', 'OPTIONS'], // Allowed methods
+      allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
     })
-);
+  );
 app.use(express.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
